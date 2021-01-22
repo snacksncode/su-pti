@@ -1,15 +1,21 @@
 @use 'variables';
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 html,
-body {
+body,
+#__next {
   height: 100%;
   width: 100%;
 }
 
 body {
   margin: 0;
-  background: var(--bg_50);
+  // background: var(--bg_50);
+  background: #222; //uncoment line above and remove this one after merge
   color: var(--text);
   font-family: "Source Sans Pro", sans-serif;
 }

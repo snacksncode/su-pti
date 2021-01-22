@@ -1,0 +1,31 @@
+.block {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .block {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .block {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .block {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .block {
+    max-width: 1140px;
+  }
+}

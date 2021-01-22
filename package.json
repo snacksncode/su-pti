@@ -2,7 +2,7 @@
   "name": "su-pti",
   "version": "1.0.0",
   "repository": "https://github.com/snacksncode/su-pti",
-  "author": "Filip Kania <fkania2@gmail.com>",
+  "author": "Filip Kania <fkania2@gmail.com>, snacksncode <snacksncode@gmail.com>",
   "scripts": {
     "dev": "next",
     "build": "next build",

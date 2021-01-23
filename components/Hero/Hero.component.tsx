@@ -15,7 +15,7 @@ const Hero = () => {
       <Container className={styles.container}>
         <div>
           <div className={styles.welcomeText}>Witamy na stronie</div>
-          <div className={styles.govText}>Samorządu</div>
+          <div>Samorządu</div>
           <div className={styles.studentText}>Uczniowskiego</div>
         </div>
 

@@ -25,6 +25,10 @@
   text-align: center;
   color: var(--bg_100);
   flex-direction: column;
+  & div:not(:first-child) {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
 }
 
 .welcomeText {
@@ -33,14 +37,7 @@
   opacity: .8;
 }
 
-.govText {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
 .studentText {
-  font-size: 2.5rem;
-  font-weight: 700;
   color: transparent;
   line-height: 90%;
 
@@ -64,7 +61,7 @@
   outline: none;
   cursor: pointer;
   border-radius: var(--br_lg);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--bg_100);
   background: var(--accent);
@@ -75,4 +72,36 @@
   font-weight: 400;
   border: 3px solid var(--accent);
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .container div:not(:first-child) {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  .welcomeText {
+    font-size: 1.6rem;
+  }
+
+  .buttonContainer {
+    flex-direction: row;
+    margin-top: 5rem;
+    & button {
+      transition: 100ms background ease-in-out, 100ms border ease-in-out;
+    }
+
+    & :first-child {
+      margin-bottom: unset;
+      margin-right: 1rem;
+
+      &:hover {
+        background: var(--accent_darker);
+      }
+    }
+
+    & :last-child:hover {
+      border: 3px solid var(--accent_darker);
+    }
+  }
 }

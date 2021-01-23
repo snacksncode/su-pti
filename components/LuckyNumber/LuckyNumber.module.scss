@@ -3,22 +3,28 @@
   flex-direction: column;
 }
 
-.header {
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-top: 3rem;
-}
-
-.date {
-  width: 100%;
-  text-align: center;
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: var(--text);
-  opacity: .6;
+.textContainer {
+  .header {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 3rem;
+  }
+  
+  .date {
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text);
+    opacity: .6;
+  }
+  
+  .todays {
+    display: none;
+  }
 }
 
 .container {
@@ -31,7 +37,7 @@
     width: 70vw;
     height: 70vw;
     background: rgb(251,194,235);
-    background: linear-gradient(325deg, rgba(251,194,235,1) 0%, rgba(166,193,238,1) 100%);
+    background: var(--gradient_main);
     overflow: hidden;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: calc(var(--br_lg) * 1.5);
@@ -45,6 +51,53 @@
       font-weight: 700;
       color: var(--bg_50);
       text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    .todays {
+      display: block;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: .5rem;
+    }
+    
+    .header {
+      text-align: left;
+      margin-top: unset;
+      font-size: 4.5rem;
+      background: var(--gradient_main);
+      line-height: 95%;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .date {
+      text-align: left;
+      margin-top: 2rem;
+    }
+  }
+
+  .container {
+    .background {
+      width: 20rem;
+      height: 17rem;
+      transform: rotate(-5deg);
+
+      .number {
+        font-size: 12rem;
+      }
     }
   }
 }

@@ -1,11 +1,13 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 import styles from "./Container.module.scss";
-import classNames from 'classnames';
+import classNames from "classnames";
 
-const Container = ({ children, className = "" }: {
-  children: ReactNode,
-  className?: string
-}) => {
+interface ContainerProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const Container = ({ children, className = "" }: ContainerProps) => {
   const finalClass = classNames(styles.block, className);
   return <div className={finalClass}>{children}</div>;
 };

@@ -7,14 +7,10 @@ import Footer from "../components/Footer";
 const Index = () => {
   return (
     <>
-      {/* <Header /> */}
-      
+      <Header />
       <Hero />
-
       <Team />
-
       <LuckyNumber />
-
       <Footer />
     </>
   );

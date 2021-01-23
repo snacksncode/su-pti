@@ -12,16 +12,16 @@
     color: var(--text);
     margin-top: 3rem;
   }
-  
+
   .date {
     width: 100%;
     text-align: center;
     font-size: 1.6rem;
     font-weight: 400;
     color: var(--text);
-    opacity: .6;
+    opacity: 0.6;
   }
-  
+
   .todays {
     display: none;
   }
@@ -36,7 +36,7 @@
   .background {
     width: 70vw;
     height: 70vw;
-    background: rgb(251,194,235);
+    background: rgb(251, 194, 235);
     background: var(--gradient_main);
     overflow: hidden;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -47,7 +47,7 @@
 
     .number {
       text-align: center;
-      font-size: 9rem;
+      font-size: 6rem;
       font-weight: 700;
       color: var(--bg_50);
       text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
@@ -55,29 +55,46 @@
   }
 }
 
+@media (min-width: 576px) {
+  .container {
+    .background {
+      width: 40vw;
+      height: 40vw;
+
+      .number {
+        font-size: 8rem;
+      }
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 5rem;
   }
   .textContainer {
     display: flex;
+    width: auto;
+    min-width: min-content;
     flex-direction: column;
     justify-content: center;
-    
+
     .todays {
       display: block;
       font-size: 3.5rem;
       font-weight: 400;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
-    
+
     .header {
       text-align: left;
       margin-top: unset;
       font-size: 4.5rem;
       background: var(--gradient_main);
-      line-height: 95%;
+      transform: translateY(-0.25rem);
       text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -90,6 +107,8 @@
   }
 
   .container {
+    width: 40%;
+    margin-left: 4rem;
     .background {
       width: 20rem;
       height: 17rem;

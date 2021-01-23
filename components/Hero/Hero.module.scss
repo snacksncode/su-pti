@@ -34,7 +34,7 @@
 .welcomeText {
   font-size: 1.3rem;
   font-weight: 400;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .studentText {
@@ -60,7 +60,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  border-radius: var(--br_lg);
+  border-radius: var(--br_sm);
   font-size: 1rem;
   font-weight: 700;
   color: var(--bg_100);

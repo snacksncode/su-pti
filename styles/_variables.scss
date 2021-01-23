@@ -1,5 +1,13 @@
 html {
-  --bg_100: #f4f4f4;
+  --bg_400: #9CA3AF;
+  --bg_200: #E5E7EB;
+  --bg_100: #f8f8f8;
   --bg_50: #ffffff;
   --text: #222222;
+  --accent: #2698E9;
+  --accent_darker: #1284D5;
+
+  --gradient_main: linear-gradient(325deg, rgba(251,194,235,1) 0%, rgba(166,193,238,1) 100%);
+
+  --br_lg: 16px;
 }

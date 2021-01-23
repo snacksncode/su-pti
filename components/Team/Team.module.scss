@@ -16,6 +16,10 @@
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
+
+  .card:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
 }
 
 .card {
@@ -29,41 +33,39 @@
   grid-template-columns: 1fr 1.75fr;
   grid-template-rows: 1fr;
 
-  & div:first-of-type {
+  .imageContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    div {
-      background: var(--bg_400);
+    height: 5.5rem;
+    width: auto;
+    position: relative;
+    margin: 1.5rem 0;
+
+    .img {
+      position: absolute;
       height: 5.5rem;
+      border-radius: 50%;
       width: auto;
-      position: relative;
-      margin: 1.5rem 0;
+    }
 
-      img {
-        position: absolute;
-        height: 5.5rem;
-        border-radius: 50%;
-        width: auto;
-      }
-
-      div {
-        z-index: 2; 
-        position: absolute;
-        width: 5.5rem;
-        height: 5.5rem;
-        border-radius: 50%;
-        background: var(--bg_200);
-        transition: 200ms opacity ease-in-out; 
-      }
+    .placeholder {
+      z-index: 2; 
+      position: absolute;
+      width: 5.5rem;
+      height: 5.5rem;
+      border-radius: 50%;
+      background: var(--bg_200);
+      transition: 200ms opacity ease-in-out; 
     }
   }
 
-  & div:last-of-type {
+  .infoContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-x: hidden;
+    width: 100%;
 
     .name {
       font-size: 1.3rem;
@@ -79,6 +81,10 @@
     .desc {
       margin-top: .3rem;
       font-size: .8rem;
+      width: 90%;
+      line-break: auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

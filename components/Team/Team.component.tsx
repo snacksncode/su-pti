@@ -1,4 +1,5 @@
 import Container from "../Container";
+import ProgressiveImage from 'react-progressive-graceful-image';
 import styles from "./Team.module.scss";
 
 const folks = [
@@ -21,7 +22,14 @@ const Team = () => {
         {folks.map(person => (
           <div className={styles.card}>
             <div>
-              <img src={person.img}/>
+              <ProgressiveImage src={person.img} placeholder="">
+                {(src, loading) => (
+                    <div>
+                      <img src={src}/>
+                      <div className={styles.imagePlaceholder} style={{ opacity: loading ? 1 : 0 }}/>
+                    </div>
+                  )}
+              </ProgressiveImage>
             </div>
             <div>
               <span className={styles.name}>{person.name}</span>

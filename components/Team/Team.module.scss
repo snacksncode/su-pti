@@ -34,12 +34,29 @@
     align-items: center;
     justify-content: center;
     
-    img {
+    div {
       background: var(--bg_400);
       height: 5.5rem;
       width: auto;
-      border-radius: 50%;
+      position: relative;
       margin: 1.5rem 0;
+
+      img {
+        position: absolute;
+        height: 5.5rem;
+        border-radius: 50%;
+        width: auto;
+      }
+
+      div {
+        z-index: 2; 
+        position: absolute;
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 50%;
+        background: var(--bg_200);
+        transition: 200ms opacity ease-in-out; 
+      }
     }
   }
 

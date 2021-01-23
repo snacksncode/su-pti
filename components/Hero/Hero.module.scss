@@ -24,6 +24,7 @@
   justify-content: center;
   text-align: center;
   color: var(--bg_100);
+  flex-direction: column;
 }
 
 .welcomeText {
@@ -33,16 +34,45 @@
 }
 
 .govText {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
 .studentText {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: transparent;
   line-height: 90%;
 
   -webkit-text-stroke: 1.5px;
   -webkit-text-stroke-color: var(--bg_100);
+}
+
+.buttonContainer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  & :first-child {
+    margin-bottom: 1rem;
+  }
+}
+
+.button {
+  width: 180px;
+  height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--br_lg);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--bg_100);
+  background: var(--accent);
+}
+
+.secondaryButton {
+  background: transparent;
+  font-weight: 400;
+  border: 3px solid var(--accent);
+  box-sizing: border-box;
 }

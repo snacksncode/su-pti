@@ -1,9 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Container from "../Container";
 import styles from "./Header.module.scss";
 import classNames from "classnames";
-import Logo from "./Logo";
 import { useInView } from "react-intersection-observer";
+
+import Scroll from "../Scroll";
+
+import Logo from "react-svg-loader!./logo.svg";
+
+import HeroStyles from '../Hero/Hero.module.scss';
+import LuckyNumberStyles from '../LuckyNumber/LuckyNumber.module.scss';
+import TeamStyles from '../Team/Team.module.scss';
+
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -11,6 +19,7 @@ const Header = () => {
     threshold: 0,
     initialInView: true,
   });
+
   const handleMenuStateToggle = () => {
     setMenuOpened((currentMenuState) => !currentMenuState);
   };
@@ -20,28 +29,35 @@ const Header = () => {
   const wrapperClasses = classNames(styles.wrapper, {
     [`${styles["wrapper--white"]}`]: !inView,
   });
+  
   return (
     <>
       <div className={wrapperClasses}>
         <Container className={styles.container}>
-          <Logo className={styles.logo} />
+          <Scroll to={HeroStyles.wrapper}>
+            <Logo className={styles.logo} />
+          </Scroll>
+
           <div onClick={handleMenuStateToggle} className={styles["menu-toggler"]}>
             {menuOpened ? "Close" : "Open"}
           </div>
+          
           <div className={navClasses}>
             <div className={styles["nav__item"]}>
-              <a href="#">Szczęśliwy numerek</a>
+              <Scroll to={LuckyNumberStyles.wrapper} withOffset={true}>
+                Szczęśliwy numer
+              </Scroll>
             </div>
+
             <div className={styles["nav__item"]}>
-              <a href="#">Sponsorzy</a>
-            </div>
-            <div className={styles["nav__item"]}>
-              <a href="#">Skład</a>
+              <Scroll to={TeamStyles.wrapper} withOffset={true}>
+                Skład samorządu
+              </Scroll>
             </div>
           </div>
         </Container>
       </div>
-      <div ref={ref} className={styles.threshold}></div>
+      <div ref={ref} className={styles.threshold} />
     </>
   );
 };

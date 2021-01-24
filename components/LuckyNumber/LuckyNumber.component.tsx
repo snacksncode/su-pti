@@ -3,7 +3,7 @@ import styles from "./LuckyNumber.module.scss";
 
 const LuckyNumber = () => {
   return (
-    <Container className={styles.wrapper}>
+    <Container id={styles.wrapper}>
       <div className={styles.textContainer}>
         <div className={styles.todays}>Dzisiejszy</div>
 

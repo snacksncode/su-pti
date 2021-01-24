@@ -33,7 +33,7 @@ const folks = [
 const Team = () => {
   return (
     <div className={styles.background}>
-      <Container className={styles.wrapper}>
+      <Container id={styles.wrapper}>
         <div className={styles.header}>Skład samorządu</div>
 
         <div className={styles.container}>

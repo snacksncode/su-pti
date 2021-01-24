@@ -1,6 +1,6 @@
 import { readFileSync, existsSync, mkdirSync, writeFileSync } from 'fs';
 
-export const defaultData: informations = {
+export const defaultData: Informations = {
     luckyNumber: {
         maxNumber: 25,
         number: 0,
@@ -32,13 +32,13 @@ export const defaultData: informations = {
     bgImg: "https://images.unsplash.com/photo-1609612006487-e6211790ece5?crop=entropy&fit=crop&fm=jpg&h=1080&q=80&w=1920"
 };
 
-const generateNewNumber = (data: informations) => {
+const generateNewNumber = (data: Informations) => {
     data.luckyNumber.number = Math.floor(Math.random() * (data.luckyNumber.maxNumber) + 1);
     data.luckyNumber.day = new Date().getDate();
 }
 
 export default () => {
-    let data: informations;
+    let data: Informations;
 
     try {
         data = JSON.parse(readFileSync('public/data.json', 'utf8'));

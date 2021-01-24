@@ -11,16 +11,20 @@
     .bar {
       background: var(--red_obviously) !important;
       transform: rotate(45deg) translate(7.5px, 7.5px);
+      transition-delay: 250ms !important;
       &::before {
         opacity: 0;
+        transform: translateX(-100%);
+        transition-delay: 0ms !important;
       }
       &::after {
         transform: translate(0, -20px) rotate(-90deg);
+        transition-delay: 250ms !important;
       }
     }
 
     .nav {
-      transform: translateX(-50%);
+      transform: translateX(calc(-100% - 3rem)) translateZ(0);
     }
   }
 
@@ -46,6 +50,7 @@
 
   .bar {
     transition: background 250ms ease, transform 250ms ease;
+    transition-delay: 0ms;
     width: 1.75rem;
     height: 4px;
     background: currentColor;
@@ -64,11 +69,13 @@
     &:before {
       top: 10px;
       opacity: 1;
-      transition: opacity 250ms ease;
+      transition: opacity 250ms ease, transform 250ms ease;
+      transition-delay: 250ms;
     }
     &:after {
       top: 20px;
       transition: transform 250ms ease;
+      transition-delay: 0ms;
     }
   }
 }
@@ -88,9 +95,9 @@
   height: auto;
   top: calc(70px + 1rem);
   will-change: transform;
-  left: 50%;
+  right: -100%;
   background-color: var(--bg_100);
-  transform: translateX(100%);
+  transform: translateX(0);
   transition: transform 400ms;
   transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);

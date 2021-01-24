@@ -6,16 +6,17 @@
   overflow: hidden;
 }
 
-.image {
+.image__container {
+  position: absolute;
   height: calc(100% + 2rem);
   width: calc(100% + 2rem);
   top: -1rem;
   left: -1rem;
-  object-fit: cover;
-  position: absolute;
-  filter: blur(8px) brightness(70%);
-  pointer-events: none;
   z-index: -1;
+  .image {
+    filter: blur(8px) brightness(70%);
+    pointer-events: none;
+  }
 }
 
 .container {

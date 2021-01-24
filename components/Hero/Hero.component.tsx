@@ -1,19 +1,20 @@
 import styles from "./Hero.module.scss";
-import Container from '../Container';
+import Container from "../Container";
 
 import Scroll from "../Scroll";
-
-import classNames from 'classnames';
+import Image from "next/image";
+import classNames from "classnames";
 
 import TeamStyles from "../Team/Team.module.scss";
 import LuckyNumberStyles from "../LuckyNumber/LuckyNumber.module.scss";
 
 const Hero = ({ bgImg }) => {
   return (
-  	<div id={styles.wrapper}>
-      <img 
-        className={styles.image}
-        src={bgImg}/>
+    <div id={styles.wrapper}>
+      {/* <img className={styles.image} src={bgImg} /> */}
+      <div className={styles.image__container}>
+        <Image src={bgImg} layout="fill" className={styles.image} priority={true} loading="eager" />
+      </div>
 
       <Container className={styles.container}>
         <div>
@@ -24,9 +25,7 @@ const Hero = ({ bgImg }) => {
 
         <div className={styles.buttonContainer}>
           <Scroll to={TeamStyles.wrapper} withOffset={true}>
-            <div className={styles.button}>
-              Zobacz skład
-            </div>
+            <div className={styles.button}>Zobacz skład</div>
           </Scroll>
 
           <Scroll to={LuckyNumberStyles.wrapper} withOffset={true}>
@@ -36,7 +35,7 @@ const Hero = ({ bgImg }) => {
           </Scroll>
         </div>
       </Container>
-  	</div>
+    </div>
   );
 };
 

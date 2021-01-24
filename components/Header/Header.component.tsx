@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer";
 import Scroll from "../Scroll";
 
 import Logo from "react-svg-loader!./logo.svg";
+import Menu from "react-svg-loader!./Menu.svg";
 
 import HeroStyles from '../Hero/Hero.module.scss';
 import LuckyNumberStyles from '../LuckyNumber/LuckyNumber.module.scss';
@@ -23,11 +24,9 @@ const Header = () => {
   const handleMenuStateToggle = () => {
     setMenuOpened((currentMenuState) => !currentMenuState);
   };
-  const navClasses = classNames(styles.nav, {
-    [`${styles["nav--opened"]}`]: menuOpened,
-  });
   const wrapperClasses = classNames(styles.wrapper, {
     [`${styles["wrapper--white"]}`]: !inView,
+    [`${styles["nav--opened"]}`]: menuOpened,
   });
   
   return (
@@ -39,18 +38,20 @@ const Header = () => {
           </Scroll>
 
           <div onClick={handleMenuStateToggle} className={styles["menu-toggler"]}>
-            {menuOpened ? "Close" : "Open"}
+            <div className={styles.bar}/>
+            <div className={styles.bar}/>
+            <div className={styles.bar}/>
           </div>
           
-          <div className={navClasses}>
+          <div className={styles.nav}>
             <div className={styles["nav__item"]}>
-              <Scroll to={LuckyNumberStyles.wrapper} withOffset={true}>
+              <Scroll to={LuckyNumberStyles.wrapper} withOffset={true} onClick={() => setMenuOpened(false)}>
                 Szczęśliwy numer
               </Scroll>
             </div>
 
             <div className={styles["nav__item"]}>
-              <Scroll to={TeamStyles.wrapper} withOffset={true}>
+              <Scroll to={TeamStyles.wrapper} withOffset={true} onClick={() => setMenuOpened(false)}>
                 Skład samorządu
               </Scroll>
             </div>

@@ -5,7 +5,22 @@
   height: 70px;
   z-index: 5;
   color: var(--bg_50);
-  transition: background 250ms ease;
+  transition: background 350ms ease, color 250ms ease;
+  
+  &.nav--opened {
+    .bar {
+      background: var(--accent) !important;
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+    }
+
+    .nav {
+      transform: translateX(calc(-100% - 15px));
+    }
+  }
+
   &--white {
     background-color: var(--bg_50);
     color: var(--text);
@@ -23,6 +38,19 @@
   z-index: 99;
   font-weight: 700;
   color: currentColor;
+
+  .bar + .bar {
+    margin-top: .40rem;
+  }
+
+  .bar {
+    transition: background 250ms ease, opacity 250ms ease;
+    width: 1.75rem;
+    height: 3px;
+    background: currentColor;
+    border-radius: 250px;
+    filter: drop-shadow(0px 0px 7px black);
+  }
 }
 
 .threshold {
@@ -41,13 +69,22 @@
   top: 0;
   will-change: transform;
   right: calc(-100% - 15px);
-  background-color: lightskyblue;
+  background-color: var(--bg_100);
   transform: translateX(0%);
   transition: transform 650ms;
   transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-  &--opened {
-    transform: translateX(calc(-100% - 15px));
+  color: var(--text) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__item {
+    font-size: 1.5rem;
+    & + & {
+      margin-top: 2rem;
+    }
   }
 }
 
@@ -77,14 +114,13 @@
     right: unset;
     width: unset;
     height: unset;
+    color: unset;
     box-shadow: unset;
     display: flex;
-    background: none; //this line should be removed after merging
+    background: none;
     transition: unset;
-
-    &--opened {
-      transform: translateX(0px);
-    }
+    flex-direction: row;
+    transform: translateX(0px) !important;
 
     &__item {
       color: var(--bg_50);
@@ -114,6 +150,7 @@
       }
       & + & {
         margin-left: 2rem;
+        margin-top: unset;
       }
     }
   }

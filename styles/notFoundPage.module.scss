@@ -1,0 +1,32 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.error-code {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--red_obviously);
+}
+.heading {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.button {
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text);
+  font-weight: 700;
+  border: 2px solid var(--accent);
+  border-radius: var(--br_sm);
+  text-decoration: none;
+  transition: background 250ms ease, color 250ms ease;
+  &:hover,
+  &:focus {
+    background: var(--accent);
+    color: var(--bg_50);
+  }
+}

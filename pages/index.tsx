@@ -6,13 +6,13 @@ import Footer from "../components/Footer";
 
 import readData from "../components/readData";
 
-const Index = ({ data }: { data: informations }) => {
+const Index = ({ data }: { data: Informations }) => {
   return (
     <>
       <Header />
-      <Hero bgImg={data.bgImg}/>
-      <Team folks={data.team}/>
-      <LuckyNumber number={data.luckyNumber}/>
+      <Hero bgImg={data.bgImg} />
+      <Team folks={data.team} />
+      <LuckyNumber number={data.luckyNumber} />
       <Footer />
     </>
   );
@@ -20,8 +20,8 @@ const Index = ({ data }: { data: informations }) => {
 
 export const getServerSideProps = () => ({
   props: {
-    data: readData()
-  }
+    data: readData(),
+  },
 });
 
 export default Index;

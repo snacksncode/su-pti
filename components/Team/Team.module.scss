@@ -42,7 +42,8 @@
     height: 5.5rem;
     width: auto;
     position: relative;
-    margin: 1.5rem 0;
+    margin: 1.5rem 0.75rem;
+    min-width: 80px;
     flex: 1;
 
     .img {

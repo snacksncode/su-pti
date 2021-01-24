@@ -47,7 +47,7 @@
 
     .number {
       text-align: center;
-      font-size: 6rem;
+      font-size: min(30vw, 10rem);
       font-weight: 700;
       color: var(--bg_50);
       text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
@@ -84,7 +84,7 @@
 
     .todays {
       display: block;
-      font-size: 3.5rem;
+      font-size: 2.25rem;
       font-weight: 400;
       margin-bottom: 0.5rem;
     }
@@ -92,7 +92,7 @@
     .header {
       text-align: left;
       margin-top: unset;
-      font-size: 4.5rem;
+      font-size: 3rem;
       background: var(--gradient_main);
       transform: translateY(-0.25rem);
       text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
@@ -107,8 +107,7 @@
   }
 
   .container {
-    width: 40%;
-    margin-left: 4rem;
+    margin-left: 5rem;
     .background {
       width: 20rem;
       height: 17rem;
@@ -117,6 +116,17 @@
       .number {
         font-size: 12rem;
       }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .textContainer {
+    .todays {
+      font-size: 3.5rem;
+    }
+    .header {
+      font-size: 4.5rem;
     }
   }
 }

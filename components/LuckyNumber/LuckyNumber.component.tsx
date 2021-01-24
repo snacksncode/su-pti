@@ -7,7 +7,11 @@ const LuckyNumber = ({ number }) => {
       <div className={styles.textContainer}>
         <div className={styles.todays}>Dzisiejszy</div>
 
-        <div className={styles.header}>Szczęśliwy numer</div>
+        <div className={styles.header}>
+          Szczęśliwy
+          <br />
+          numer
+        </div>
 
         <div className={styles.date}>{new Date().toLocaleDateString()}</div>
       </div>

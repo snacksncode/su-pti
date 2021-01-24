@@ -9,10 +9,14 @@ const Footer = () => {
           Made by{" "}
           <b>
             <a href="https://github.com/filipkania">Filip Kania</a>
-          </b>{" "}
-          &{" "}
+          </b>
+          ,{" "}
           <b>
             <a href="https://github.com/snacksncode">Ilya Dolotov</a>
+          </b>
+          {" & "}
+          <b>
+            <a href="https://github.com/FilipFilipinski">Maximilian Cyprys</a>
           </b>
         </span>
         <span>All rights reserved &#169; {new Date().getFullYear()}</span>

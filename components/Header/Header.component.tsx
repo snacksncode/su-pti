@@ -7,7 +7,6 @@ import { useInView } from "react-intersection-observer";
 import Scroll from "../Scroll";
 
 import Logo from "react-svg-loader!./logo.svg";
-import Menu from "react-svg-loader!./Menu.svg";
 
 import HeroStyles from '../Hero/Hero.module.scss';
 import LuckyNumberStyles from '../LuckyNumber/LuckyNumber.module.scss';

@@ -8,10 +8,9 @@ import Scroll from "../Scroll";
 
 import Logo from "react-svg-loader!./logo.svg";
 
-import HeroStyles from '../Hero/Hero.module.scss';
-import LuckyNumberStyles from '../LuckyNumber/LuckyNumber.module.scss';
-import TeamStyles from '../Team/Team.module.scss';
-
+import HeroStyles from "../Hero/Hero.module.scss";
+import LuckyNumberStyles from "../LuckyNumber/LuckyNumber.module.scss";
+import TeamStyles from "../Team/Team.module.scss";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -27,7 +26,7 @@ const Header = () => {
     [`${styles["wrapper--white"]}`]: !inView,
     [`${styles["nav--opened"]}`]: menuOpened,
   });
-  
+
   return (
     <>
       <div className={wrapperClasses}>
@@ -37,20 +36,26 @@ const Header = () => {
           </Scroll>
 
           <div onClick={handleMenuStateToggle} className={styles["menu-toggler"]}>
-            <div className={styles.bar}/>
-            <div className={styles.bar}/>
-            <div className={styles.bar}/>
+            <div className={styles.bar} />
           </div>
-          
+
           <div className={styles.nav}>
-            <div className={styles["nav__item"]}>
-              <Scroll to={LuckyNumberStyles.wrapper} withOffset={true} onClick={() => setMenuOpened(false)}>
+            <div className={styles.nav__item}>
+              <Scroll
+                to={LuckyNumberStyles.wrapper}
+                withOffset={true}
+                onClick={() => setMenuOpened(false)}
+              >
                 Szczęśliwy numer
               </Scroll>
             </div>
 
-            <div className={styles["nav__item"]}>
-              <Scroll to={TeamStyles.wrapper} withOffset={true} onClick={() => setMenuOpened(false)}>
+            <div className={styles.nav__item}>
+              <Scroll
+                to={TeamStyles.wrapper}
+                withOffset={true}
+                onClick={() => setMenuOpened(false)}
+              >
                 Skład samorządu
               </Scroll>
             </div>

@@ -6,18 +6,21 @@
   z-index: 5;
   color: var(--bg_50);
   transition: background 350ms ease, color 250ms ease;
-  
+
   &.nav--opened {
     .bar {
-      background: var(--accent) !important;
-
-      &:nth-child(2) {
+      background: var(--red_obviously) !important;
+      transform: rotate(45deg) translate(7.5px, 7.5px);
+      &::before {
         opacity: 0;
+      }
+      &::after {
+        transform: translate(0, -20px) rotate(-90deg);
       }
     }
 
     .nav {
-      transform: translateX(calc(-100% - 15px));
+      transform: translateX(-50%);
     }
   }
 
@@ -35,20 +38,38 @@
 
 .menu-toggler {
   position: relative;
+  width: 1.75rem;
+  height: 25px;
   z-index: 99;
   font-weight: 700;
   color: currentColor;
 
-  .bar + .bar {
-    margin-top: .40rem;
-  }
-
   .bar {
-    transition: background 250ms ease, opacity 250ms ease;
+    transition: background 250ms ease, transform 250ms ease;
     width: 1.75rem;
-    height: 3px;
+    height: 4px;
     background: currentColor;
-    border-radius: 250px;
+    border-radius: 3px;
+    position: absolute;
+    top: 0px;
+    &:before,
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background-color: inherit;
+      position: absolute;
+    }
+    &:before {
+      top: 10px;
+      opacity: 1;
+      transition: opacity 250ms ease;
+    }
+    &:after {
+      top: 20px;
+      transition: transform 250ms ease;
+    }
   }
 }
 
@@ -57,33 +78,32 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80vh;
+  height: 15vh;
 }
 
 .nav {
   position: fixed;
   z-index: 5;
-  width: 100%;
-  height: 100vh;
-  top: 0;
+  width: calc(100% - 2rem);
+  height: auto;
+  top: calc(70px + 1rem);
   will-change: transform;
-  right: calc(-100% - 15px);
+  left: 50%;
   background-color: var(--bg_100);
-  transform: translateX(0%);
-  transition: transform 650ms;
+  transform: translateX(100%);
+  transition: transform 400ms;
   transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
   color: var(--text) !important;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: var(--br_sm);
   flex-direction: column;
 
   &__item {
-    font-size: 1.5rem;
-    & + & {
-      margin-top: 2rem;
-    }
+    font-size: 1rem;
+    padding: 0.8rem 1.75rem;
   }
 }
 
@@ -111,6 +131,7 @@
     position: relative;
     top: unset;
     right: unset;
+    left: unset;
     width: unset;
     height: unset;
     color: unset;

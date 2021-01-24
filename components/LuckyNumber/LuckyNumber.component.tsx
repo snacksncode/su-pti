@@ -1,7 +1,7 @@
 import Container from "../Container";
 import styles from "./LuckyNumber.module.scss";
 
-const LuckyNumber = () => {
+const LuckyNumber = ({ number }) => {
   return (
     <Container id={styles.wrapper}>
       <div className={styles.textContainer}>
@@ -14,7 +14,7 @@ const LuckyNumber = () => {
 
       <div className={styles.container}>
         <div className={styles.background}>
-          <span className={styles.number}>21</span>
+          <span className={styles.number}>{number.number}</span>
         </div>
       </div>
     </Container>

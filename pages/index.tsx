@@ -4,16 +4,24 @@ import LuckyNumber from "../components/LuckyNumber";
 import Team from "../components/Team";
 import Footer from "../components/Footer";
 
-const Index = () => {
+import readData from "../components/readData";
+
+const Index = ({ data }: { data: informations }) => {
   return (
     <>
       <Header />
-      <Hero />
-      <Team />
-      <LuckyNumber />
+      <Hero bgImg={data.bgImg}/>
+      <Team folks={data.team}/>
+      <LuckyNumber number={data.luckyNumber}/>
       <Footer />
     </>
   );
 };
+
+export const getServerSideProps = () => ({
+  props: {
+    data: readData()
+  }
+});
 
 export default Index;

@@ -3,34 +3,7 @@ import ProgressiveImage from "react-progressive-graceful-image";
 import classNames from "classnames";
 import styles from "./Team.module.scss";
 
-const folks = [
-  {
-    name: "Patryk Kulec",
-    img: "https://source.unsplash.com/random/250x250/?nature,fog",
-    role: "Przewodniczący",
-    isLeader: true,
-    desc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quod exercitationem. Eaque veritatis accusantium voluptatibus labore.",
-  },
-  {
-    name: "Maximilian Cyprys",
-    img: "https://source.unsplash.com/random/250x250/?nature,forest",
-    role: "Skarbnik",
-    isLeader: false,
-    desc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quod exercitationem. Eaque veritatis accusantium voluptatibus labore.",
-  },
-  {
-    name: "Szymon Babik",
-    img: "https://source.unsplash.com/random/250x250/?fog,forest",
-    role: "Zastępca",
-    isLeader: false,
-    desc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quod exercitationem. Eaque veritatis accusantium voluptatibus labore.",
-  },
-];
-
-const Team = () => {
+const Team = ({ folks }) => {
   return (
     <div className={styles.background}>
       <Container id={styles.wrapper}>

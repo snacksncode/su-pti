@@ -8,14 +8,12 @@ import classNames from 'classnames';
 import TeamStyles from "../Team/Team.module.scss";
 import LuckyNumberStyles from "../LuckyNumber/LuckyNumber.module.scss";
 
-const imgUrl = "https://images.unsplash.com/photo-1609612006487-e6211790ece5?crop=entropy&fit=crop&fm=jpg&h=1080&q=80&w=1920";
-
-const Hero = () => {
+const Hero = ({ bgImg }) => {
   return (
   	<div id={styles.wrapper}>
       <img 
         className={styles.image}
-        src={imgUrl}/>
+        src={bgImg}/>
 
       <Container className={styles.container}>
         <div>

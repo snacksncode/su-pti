@@ -1,7 +1,7 @@
 import "../styles/global.scss";
 
-function MyApp({ Component, pageProps }) {
+const SuPTI = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
 }
 
-export default MyApp;
+export default SuPTI;
